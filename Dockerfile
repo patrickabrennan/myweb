@@ -8,6 +8,7 @@ RUN yum update -y && yum install -y \
 
 COPY index.html /var/www/html
 COPY map_process.php /var/www/html
+COPY database.php /var/www/html
 
 EXPOSE 80
 # Simple startup script to avoid some issues observed with container restart
