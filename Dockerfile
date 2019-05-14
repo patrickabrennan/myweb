@@ -11,10 +11,10 @@ COPY map_process.php /var/www/html
 COPY database.php /var/www/html
 
 CMD ["mkdir /var/www/html/js"]
-COPY js/* /var/www/html/js
+COPY js/* /var/www/html/js/
 
 CMD ["mkdir /var/www.html/icons"]
-COPY icons/* /usr/share/httpd/icons
+COPY icons/* /usr/share/httpd/icons/
 
 EXPOSE 80
 # Simple startup script to avoid some issues observed with container restart
