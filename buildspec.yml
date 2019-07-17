@@ -21,4 +21,4 @@ phases:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$REPOSITORY_URI:$IMAGE_TAG
+      - docker push 278697972666.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$REPOSITORY_URI:$IMAGE_TAG
