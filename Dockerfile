@@ -9,6 +9,7 @@ RUN yum update -y && yum install -y \
 COPY index.html /var/www/html
 COPY map_process.php /var/www/html
 COPY database.php /var/www/html
+COPY .htaccess /var/www/html
 
 CMD ["mkdir /var/www/html/js"]
 COPY js/* /var/www/html/js/
