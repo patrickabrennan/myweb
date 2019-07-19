@@ -14,6 +14,7 @@ phases:
       - echo $COMMIT_HASH
       - IMAGE_TAG=${COMMIT_HASH:=latest}
       - echo $IMAGE_TAG
+      - aws cloudfront create-invalidation --distribution-id E22G0DLAV43MNF --paths /index.html
   build:
     commands:
       - echo Build started on `date`
