@@ -2,9 +2,9 @@ FROM centos:latest
 
 RUN yum update -y && yum install -y \
 	httpd \
-	php \
-	php-mysql \
-	php-xml
+	php 
+#	php-mysql \
+#	php-xml
 
 COPY index.html /var/www/html
 COPY map_process.php /var/www/html
