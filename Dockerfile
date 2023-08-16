@@ -26,7 +26,10 @@ COPY ./ssl.crt /etc/apache2/ssl/ssl.crt
 COPY ./ssl.key /etc/apache2/ssl/ssl.key
 RUN mkdir -p /var/run/apache2/
 
+RUN sed -i 's/#ServerName\ www.example.com:443/ServerName\ www.pabrennan.com:443/g' /etc/httpd/conf.dssl.conf 
 EXPOSE 80
+EXPOSE 443
+
 # Simple startup script to avoid some issues observed with container restart
 ADD run-httpd.sh /run-httpd.sh
 RUN chmod -v +x /run-httpd.sh
