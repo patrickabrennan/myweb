@@ -26,7 +26,7 @@ COPY ./ssl.crt /etc/apache2/ssl/ssl.crt
 COPY ./ssl.key /etc/apache2/ssl/ssl.key
 RUN mkdir -p /var/run/apache2/
 
-#RUN sed -i 's/#ServerName\ www.example.com:443/ServerName\ www.pabrennan.com:443/g' /etc/httpd/conf/ssl.conf 
+#RUN sed -i 's/#ServerName\ www.example.com:443/ServerName\ www.pabrennan.com:443/g' /etc/httpd/conf.d/ssl.conf
 
 EXPOSE 80
 EXPOSE 443
