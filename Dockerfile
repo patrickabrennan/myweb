@@ -9,7 +9,7 @@ RUN yum update -y && yum install -y \
 #	php-mysql \
 #	php-xml
 
-#RUN yum install mod_ssl -y
+RUN yum install mod_ssl -y
 
 COPY index.html /var/www/html
 COPY map_process.php /var/www/html
@@ -26,7 +26,7 @@ COPY ./ssl.crt /etc/apache2/ssl/ssl.crt
 COPY ./ssl.key /etc/apache2/ssl/ssl.key
 RUN mkdir -p /var/run/apache2/
 
-#RUN sed -i 's/#ServerName\ www.example.com:443/ServerName\ www.pabrennan.com:443/g' /etc/httpd/conf.d/ssl.conf
+RUN sed -i 's/#ServerName\ www.example.com:443/ServerName\ www.pabrennan.com:443/g' /etc/httpd/conf.d/ssl.conf
 
 EXPOSE 80
 EXPOSE 443
