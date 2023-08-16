@@ -5,7 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
-<script type="text/javascript" src="https://www.pabrennan.com/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://tf-demo.pabrennan.com/js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdSjdKcflZdApX8f9lsoQZ-_eNy14v0Kc"></script>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -70,7 +70,7 @@ function map_initialize()
 				  var address = '<p>'+ $(this).attr('address') +'</p>';
 				  var type = $(this).attr('type');
 				  var point = new google.maps.LatLng(parseFloat($(this).attr('lat')),parseFloat($(this).attr('lng')));
-				  create_marker(point, name, address, false, false, false, "https://www.pabrennan.com/icons/pin_blue.png");
+				  create_marker(point, name, address, false, false, false, "https://tf-demo.pabrennan.com/icons/pin_blue.png");
 			});
 		});	
 			
@@ -87,7 +87,7 @@ function map_initialize()
 			'</div></p><button name="save-marker" class="save-marker">Save Marker Details</button>';
 
 			//Drop a new Marker with our Edit Form
-			create_marker(event.latLng, 'New Marker', EditForm, true, true, true, "https://www.pabrennan.com/icons/pin_green.png");
+			create_marker(event.latLng, 'New Marker', EditForm, true, true, true, "https://tf-demo.pabrennan.com/icons/pin_green.png");
 		});
 										
 	}
@@ -203,7 +203,7 @@ function map_initialize()
 		  	success:function(data){
 				replaceWin.html(data); //replace info window with new html
 				Marker.setDraggable(false); //set marker to fixed
-				Marker.setIcon('https://www.pabrennan.com/icons/pin_blue.png'); //replace icon
+				Marker.setIcon('https://tf-demo.pabrennan.com/icons/pin_blue.png'); //replace icon
             		},
             		error:function (xhr, ajaxOptions, thrownError){
                 	lert(thrownError); //throw any errors
