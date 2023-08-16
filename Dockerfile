@@ -1,7 +1,7 @@
-FROM centos:latest
+#FROM centos:latest
 
-RUN dnf --disablerepo '*' --enablerepo=extras swap centos-linux-repos centos-stream-repos -y 
-RUN dnf distro-sync -y
+#RUN dnf --disablerepo '*' --enablerepo=extras swap centos-linux-repos centos-stream-repos -y 
+#RUN dnf distro-sync -y
 
 RUN yum update -y && yum install -y \
 	httpd \
