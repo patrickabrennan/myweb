@@ -36,9 +36,9 @@ COPY icons/* /usr/share/httpd/icons/
 COPY self-signed.conf /etc/nginx/snippets
 COPY ssl-params.conf /etc/nginx/snippets
 COPY dhparam.pem /etc/ssl/certs
-COPY pabrennan.com /etc/nginx/sites-available
+COPY www.pabrennan.com /etc/nginx/sites-available
 
-CMD ["ln -s /etc/nginx/sites-available/pabrennan.com /etc/nginx/sites-enabled/"]
+CMD ["ln -s /etc/nginx/sites-available/www.pabrennan.com /etc/nginx/sites-enabled/"]
 
 #COPY ./ssl.crt /etc/apache2/ssl/ssl.crt
 #COPY ./ssl.key /etc/apache2/ssl/ssl.key
