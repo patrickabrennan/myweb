@@ -54,4 +54,4 @@ EXPOSE 443
 #RUN chmod -v +x /run-httpd.sh
 
 #CMD ["/run-httpd.sh"]
-CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
+#CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
