@@ -21,10 +21,10 @@ FROM nginx:latest
 #COPY database.php /var/www/html
 #COPY .htaccess /var/www/html
 
-COPY index.html /usr/share/nginx/html/index.html
-COPY map_process.php /usr/share/nginx/html/index.html
-COPY database.php /usr/share/nginx/html/index.html
-COPY .htaccess /usr/share/nginx/html/index.html
+#COPY index.html /usr/share/nginx/html/index.html
+#COPY map_process.php /usr/share/nginx/html/index.html
+#COPY database.php /usr/share/nginx/html/index.html
+#COPY .htaccess /usr/share/nginx/html/index.html
 
 
 CMD ["mkdir /var/www/html/js"]
@@ -33,12 +33,12 @@ COPY js/* /var/www/html/js/
 CMD ["mkdir /var/www.html/icons"]
 COPY icons/* /usr/share/httpd/icons/
 
-COPY self-signed.conf /etc/nginx/snippets
-COPY ssl-params.conf /etc/nginx/snippets
-COPY dhparam.pem /etc/ssl/certs
-COPY www.pabrennan.com /etc/nginx/sites-available
+#COPY self-signed.conf /etc/nginx/snippets
+#COPY ssl-params.conf /etc/nginx/snippets
+#COPY dhparam.pem /etc/ssl/certs
+#COPY www.pabrennan.com /etc/nginx/sites-available
 
-CMD ["ln -s /etc/nginx/sites-available/www.pabrennan.com /etc/nginx/sites-enabled/"]
+#CMD ["ln -s /etc/nginx/sites-available/www.pabrennan.com /etc/nginx/sites-enabled/"]
 
 #COPY ./ssl.crt /etc/apache2/ssl/ssl.crt
 #COPY ./ssl.key /etc/apache2/ssl/ssl.key
@@ -54,4 +54,3 @@ EXPOSE 443
 #RUN chmod -v +x /run-httpd.sh
 
 #CMD ["/run-httpd.sh"]
-#CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
