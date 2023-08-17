@@ -25,17 +25,24 @@ COPY js/* /var/www/html/js/
 CMD ["mkdir /var/www.html/icons"]
 COPY icons/* /usr/share/httpd/icons/
 
+COPY ./self-signed.conf /etc/nginx/snippets/self-signed.conf
+COPY ./ssl-params.conf /etc/nginx/snippets/ssl-params.conf
+COLPY ./dhparam.pem /etc/ssl/certs/dhparam.pem
+COPY pabrennan.com /etc/nginx/sites-available/pabrennan.com
+
+RUN ln -s /etc/nginx/sites-available/www.example.com /etc/nginx/sites-enabled/
+
 #COPY ./ssl.crt /etc/apache2/ssl/ssl.crt
 #COPY ./ssl.key /etc/apache2/ssl/ssl.key
-RUN mkdir -p /var/run/apache2/
+#RUN mkdir -p /var/run/apache2/
 
-RUN sed -i 's/#ServerName\ www.example.com:443/ServerName\ www.pabrennan.com:443/g' /etc/httpd/conf.d/ssl.conf
+#RUN sed -i 's/#ServerName\ www.example.com:443/ServerName\ www.pabrennan.com:443/g' /etc/httpd/conf.d/ssl.conf
 
 EXPOSE 80
 EXPOSE 443
 
 # Simple startup script to avoid some issues observed with container restart
-ADD run-httpd.sh /run-httpd.sh
-RUN chmod -v +x /run-httpd.sh
+#ADD run-httpd.sh /run-httpd.sh
+#RUN chmod -v +x /run-httpd.sh
 
-CMD ["/run-httpd.sh"]
+#CMD ["/run-httpd.sh"]
