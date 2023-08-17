@@ -33,12 +33,12 @@ COPY js/* /var/www/html/js/
 CMD ["mkdir /var/www.html/icons"]
 COPY icons/* /usr/share/httpd/icons/
 
-#COPY self-signed.conf /etc/nginx/snippets
-#COPY ssl-params.conf /etc/nginx/snippets
-#COPY dhparam.pem /etc/ssl/certs
-#COPY pabrennan.com /etc/nginx/sites-available
+COPY self-signed.conf /etc/nginx/snippets
+COPY ssl-params.conf /etc/nginx/snippets
+COPY dhparam.pem /etc/ssl/certs
+COPY pabrennan.com /etc/nginx/sites-available
 
-#RUN ln -s /etc/nginx/sites-available/www.pabrennan.com /etc/nginx/sites-enabled/
+RUN ln -s /etc/nginx/sites-available/www.pabrennan.com /etc/nginx/sites-enabled/
 
 #COPY ./ssl.crt /etc/apache2/ssl/ssl.crt
 #COPY ./ssl.key /etc/apache2/ssl/ssl.key
@@ -54,3 +54,5 @@ EXPOSE 443
 #RUN chmod -v +x /run-httpd.sh
 
 #CMD ["/run-httpd.sh"]
+STOPSIGNAL SIGTERM
+CMD ["nginx", "-g", "daemon off;"]
