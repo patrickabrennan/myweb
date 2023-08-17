@@ -4,8 +4,8 @@ FROM ubuntu:18.04
 #RUN dnf distro-sync -y
 
 
-RUN sudo apt-get update 
-RUN sudo apt install nginx-light -y 
+CMD ["sudo apt-get update" 
+CMD ["sudo apt install nginx-light -y"]
 #RUN yum update -y && yum install -y \
 #	httpd  \
 #	php 
