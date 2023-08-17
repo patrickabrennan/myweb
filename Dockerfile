@@ -30,10 +30,10 @@ FROM nginx:latest
 #COPY .htaccess /usr/share/nginx/html/index.html
 
 
-CMD ["mkdir /usr/share/nginx/html/js"]
+RUN mkdir /usr/share/nginx/html/js
 COPY ./js/ /usr/share/nginx/html/js/
 
-CMD ["mkdir /usr/share/nginx/html/icons"]
+RUN mkdir /usr/share/nginx/html/icons
 COPY ./icons/ /usr/share/nginx/html/icons/
 
 #COPY self-signed.conf /etc/nginx/snippets
