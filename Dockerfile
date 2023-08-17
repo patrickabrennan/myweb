@@ -19,11 +19,11 @@ COPY map_process.php /var/www/html
 COPY database.php /var/www/html
 COPY .htaccess /var/www/html
 
-CMD ["mkdir /var/www/html/js"]
-COPY js/* /var/www/html/js/
+#CMD ["mkdir /var/www/html/js"]
+#COPY js/* /var/www/html/js/
 
-CMD ["mkdir /var/www.html/icons"]
-COPY icons/* /usr/share/httpd/icons/
+#CMD ["mkdir /var/www.html/icons"]
+#COPY icons/* /usr/share/httpd/icons/
 
 COPY self-signed.conf /etc/nginx/snippets
 COPY ssl-params.conf /etc/nginx/snippets
