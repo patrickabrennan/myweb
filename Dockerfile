@@ -27,7 +27,7 @@ COPY icons/* /usr/share/httpd/icons/
 
 COPY ./self-signed.conf /etc/nginx/snippets/self-signed.conf
 COPY ./ssl-params.conf /etc/nginx/snippets/ssl-params.conf
-COLPY ./dhparam.pem /etc/ssl/certs/dhparam.pem
+COPY ./dhparam.pem /etc/ssl/certs/dhparam.pem
 COPY pabrennan.com /etc/nginx/sites-available/pabrennan.com
 
 CMD ["ln -s /etc/nginx/sites-available/www.example.com /etc/nginx/sites-enabled/"]
