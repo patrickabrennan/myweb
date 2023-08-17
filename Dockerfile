@@ -4,7 +4,7 @@ FROM ubuntu:18.04
 #RUN dnf distro-sync -y
 
 
-CMD ["sudo apt-get update" 
+CMD ["sudo apt-get update"]
 CMD ["sudo apt install nginx-light -y"]
 #RUN yum update -y && yum install -y \
 #	httpd  \
@@ -30,7 +30,7 @@ COPY ssl-params.conf /etc/nginx/snippets
 COPY dhparam.pem /etc/ssl/certs
 COPY pabrennan.com /etc/nginx/sites-available
 
-CMD ["ln -s /etc/nginx/sites-available/www.pabrennan.com /etc/nginx/sites-enabled/"]
+CMD ["sudo ln -s /etc/nginx/sites-available/www.pabrennan.com /etc/nginx/sites-enabled/"]
 
 #COPY ./ssl.crt /etc/apache2/ssl/ssl.crt
 #COPY ./ssl.key /etc/apache2/ssl/ssl.key
