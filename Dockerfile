@@ -1,10 +1,11 @@
 #FROM centos:latest
-FROM alpine:latest
+FROM ubuntu:18.04
 #RUN dnf --disablerepo '*' --enablerepo=extras swap centos-linux-repos centos-stream-repos -y 
 #RUN dnf distro-sync -y
 
 
-RUN apk add httpd mod_ssl
+RUN sudo apt-get update 
+RUN sudo apt install nginx-light -y 
 #RUN yum update -y && yum install -y \
 #	httpd  \
 #	php 
@@ -24,8 +25,8 @@ COPY js/* /var/www/html/js/
 CMD ["mkdir /var/www.html/icons"]
 COPY icons/* /usr/share/httpd/icons/
 
-COPY ./ssl.crt /etc/apache2/ssl/ssl.crt
-COPY ./ssl.key /etc/apache2/ssl/ssl.key
+#COPY ./ssl.crt /etc/apache2/ssl/ssl.crt
+#COPY ./ssl.key /etc/apache2/ssl/ssl.key
 RUN mkdir -p /var/run/apache2/
 
 RUN sed -i 's/#ServerName\ www.example.com:443/ServerName\ www.pabrennan.com:443/g' /etc/httpd/conf.d/ssl.conf
