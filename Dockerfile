@@ -25,10 +25,10 @@ COPY js/* /var/www/html/js/
 CMD ["mkdir /var/www.html/icons"]
 COPY icons/* /usr/share/httpd/icons/
 
-COPY self-signed.conf /etc/nginx/snippets/self-signed.conf
-COPY ssl-params.conf /etc/nginx/snippets/ssl-params.conf
-COPY dhparam.pem /etc/ssl/certs/dhparam.pem
-COPY pabrennan.com /etc/nginx/sites-available/pabrennan.com
+COPY self-signed.conf /etc/nginx/snippets
+COPY ssl-params.conf /etc/nginx/snippets
+COPY dhparam.pem /etc/ssl/certs
+COPY pabrennan.com /etc/nginx/sites-available
 
 CMD ["ln -s /etc/nginx/sites-available/www.pabrennan.com /etc/nginx/sites-enabled/"]
 
