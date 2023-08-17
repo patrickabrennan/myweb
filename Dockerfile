@@ -30,7 +30,7 @@ COPY ssl-params.conf /etc/nginx/snippets/ssl-params.conf
 COPY dhparam.pem /etc/ssl/certs/dhparam.pem
 COPY pabrennan.com /etc/nginx/sites-available/pabrennan.com
 
-CMD ["ln -s /etc/nginx/sites-available/www.example.com /etc/nginx/sites-enabled/"]
+CMD ["ln -s /etc/nginx/sites-available/www.pabrennan.com /etc/nginx/sites-enabled/"]
 
 #COPY ./ssl.crt /etc/apache2/ssl/ssl.crt
 #COPY ./ssl.key /etc/apache2/ssl/ssl.key
