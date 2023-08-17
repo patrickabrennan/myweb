@@ -15,7 +15,7 @@ server {
 listen 80;
 listen [::]:80;
 
-server_name example.com www.example.com;
+server_name pabrennan.com www.pabrennan.com;
 
 return 302 https://$server_name$request_uri;
 }
