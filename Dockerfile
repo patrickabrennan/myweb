@@ -1,11 +1,13 @@
 #FROM centos:latest
-FROM ubuntu:18.04
+#FROM ubuntu:18.04
+FROM nginx:latest
+
 #RUN dnf --disablerepo '*' --enablerepo=extras swap centos-linux-repos centos-stream-repos -y 
 #RUN dnf distro-sync -y
 
 
-RUN apt-get update
-RUN apt install nginx-light -y
+#RUN apt-get update
+#RUN apt install nginx-light -y
 #RUN yum update -y && yum install -y \
 #	httpd  \
 #	php 
@@ -14,23 +16,29 @@ RUN apt install nginx-light -y
 
 # RUN yum install mod_ssl -y
 
-COPY index.html /var/www/html
-COPY map_process.php /var/www/html
-COPY database.php /var/www/html
-COPY .htaccess /var/www/html
+#COPY index.html /var/www/html
+#COPY map_process.php /var/www/html
+#COPY database.php /var/www/html
+#COPY .htaccess /var/www/html
 
-#CMD ["mkdir /var/www/html/js"]
-#COPY js/* /var/www/html/js/
+COPY index.html /usr/share/nginx/html/index.html
+COPY map_process.php /usr/share/nginx/html/index.html
+COPY database.php /usr/share/nginx/html/index.html
+COPY .htaccess /usr/share/nginx/html/index.html
 
-#CMD ["mkdir /var/www.html/icons"]
-#COPY icons/* /usr/share/httpd/icons/
 
-COPY self-signed.conf /etc/nginx/snippets
-COPY ssl-params.conf /etc/nginx/snippets
-COPY dhparam.pem /etc/ssl/certs
-COPY pabrennan.com /etc/nginx/sites-available
+CMD ["mkdir /var/www/html/js"]
+COPY js/* /var/www/html/js/
 
-RUN ln -s /etc/nginx/sites-available/www.pabrennan.com /etc/nginx/sites-enabled/
+CMD ["mkdir /var/www.html/icons"]
+COPY icons/* /usr/share/httpd/icons/
+
+#COPY self-signed.conf /etc/nginx/snippets
+#COPY ssl-params.conf /etc/nginx/snippets
+#COPY dhparam.pem /etc/ssl/certs
+#COPY pabrennan.com /etc/nginx/sites-available
+
+#RUN ln -s /etc/nginx/sites-available/www.pabrennan.com /etc/nginx/sites-enabled/
 
 #COPY ./ssl.crt /etc/apache2/ssl/ssl.crt
 #COPY ./ssl.key /etc/apache2/ssl/ssl.key
