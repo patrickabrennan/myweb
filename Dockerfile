@@ -78,9 +78,12 @@ RUN set -ex && \
 # Copy in our "default" Nginx server configurations, which make sure that the
 # ACME challenge requests are correctly forwarded to certbot and then redirects
 # everything else to HTTPS.
+
 COPY nginx_conf.d/ /etc/nginx/conf.d/
 
 # Copy in all our scripts and make them executable.
+
+RUN mkdir /scripts
 COPY scripts/ /scripts
 RUN chmod +x -R /scripts && \
 # Make so that the parent's entrypoint script is properly triggered (issue #21).
