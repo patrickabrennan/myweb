@@ -1,5 +1,5 @@
 #FROM centos:latest
-FROM redhat:ubi8
+FROM alpine:latest
 #RUN dnf --disablerepo '*' --enablerepo=extras swap centos-linux-repos centos-stream-repos -y 
 #RUN dnf distro-sync -y
 
