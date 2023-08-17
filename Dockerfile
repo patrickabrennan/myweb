@@ -24,10 +24,10 @@ FROM nginx:latest
 #COPY database.php /var/www/html
 #COPY .htaccess /var/www/html
 
-#COPY index.html /usr/share/nginx/html/index.html
-#COPY map_process.php /usr/share/nginx/html/index.html
-#COPY database.php /usr/share/nginx/html/index.html
-#COPY .htaccess /usr/share/nginx/html/index.html
+COPY index.html /usr/share/nginx/html
+COPY map_process.php /usr/share/nginx/html
+COPY database.php /usr/share/nginx/html
+COPY .htaccess /usr/share/nginx/html
 
 
 RUN mkdir /usr/share/nginx/html/js
