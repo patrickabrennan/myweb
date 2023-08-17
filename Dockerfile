@@ -5,6 +5,9 @@ FROM nginx:latest
 #RUN dnf --disablerepo '*' --enablerepo=extras swap centos-linux-repos centos-stream-repos -y 
 #RUN dnf distro-sync -y
 
+RUN apt-get update
+RUN apt-get install certbot
+RUN apt-get install python3-certbot-nginx
 
 #RUN apt-get update
 #RUN apt install nginx-light -y
