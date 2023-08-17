@@ -3,13 +3,15 @@ FROM alpine:latest
 #RUN dnf --disablerepo '*' --enablerepo=extras swap centos-linux-repos centos-stream-repos -y 
 #RUN dnf distro-sync -y
 
-RUN yum update -y && yum install -y \
-	httpd \
-	php 
+
+RUN apk add httpd mod_ssl
+#RUN yum update -y && yum install -y \
+#	httpd  \
+#	php 
 #	php-mysql \
 #	php-xml
 
-RUN yum install mod_ssl -y
+# RUN yum install mod_ssl -y
 
 COPY index.html /var/www/html
 COPY map_process.php /var/www/html
