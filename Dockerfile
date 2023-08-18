@@ -19,6 +19,9 @@ FROM nginx:latest
 
 # RUN yum install mod_ssl -y
 
+RUN mv /etc/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf.backup
+COPY default.conf /etc/nginx/conf.d
+
 #COPY index.html /var/www/html
 #COPY map_process.php /var/www/html
 #COPY database.php /var/www/html
