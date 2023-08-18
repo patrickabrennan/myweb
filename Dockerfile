@@ -22,6 +22,9 @@ FROM nginx:latest
 RUN mv /etc/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf.backup
 COPY default.conf /etc/nginx/conf.d
 
+COPY nginx-selfsigned.crt /etc/ssl/certs
+COPY nginx-selfsigned.key /etc/ssl/private
+
 #COPY index.html /var/www/html
 #COPY map_process.php /var/www/html
 #COPY database.php /var/www/html
