@@ -64,15 +64,15 @@ function map_initialize()
 
 			
 		//Load Markers from the XML File, Check (map_process.php)
-		$.get("map_process.php", function (data) {
-			$(data).find("marker").each(function () {
-				  var name = $(this).attr('name');
-				  var address = '<p>'+ $(this).attr('address') +'</p>';
-				  var type = $(this).attr('type');
-				  var point = new google.maps.LatLng(parseFloat($(this).attr('lat')),parseFloat($(this).attr('lng')));
-				  create_marker(point, name, address, false, false, false, "https://tf-demo.pabrennan.com/icons/pin_blue.png");
-			});
-		});	
+		//$.get("map_process.php", function (data) {
+		//	$(data).find("marker").each(function () {
+		//		  var name = $(this).attr('name');
+		//		  var address = '<p>'+ $(this).attr('address') +'</p>';
+		//		  var type = $(this).attr('type');
+		//		  var point = new google.maps.LatLng(parseFloat($(this).attr('lat')),parseFloat($(this).attr('lng')));
+		//		  create_marker(point, name, address, false, false, false, "https://tf-demo.pabrennan.com/icons/pin_blue.png");
+		//	});
+		//});	
 			
 		//Right Click to Drop a New Marker
 		google.maps.event.addListener(map, 'rightclick', function(event) {
