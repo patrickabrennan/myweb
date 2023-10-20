@@ -22,9 +22,9 @@ FROM nginx:latest
 RUN mv /etc/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf.backup
 COPY default.conf /etc/nginx/conf.d
 
-COPY  tf-demo.pabrennan.com.crt /etc/ssl/certs
+COPY  demo.pabrennan.com.crt /etc/ssl/certs
 #COPY nginx-selfsigned.crt /etc/ssl/certs
-COPY tf-demo.pabrennan.com.key /etc/ssl/private
+COPY demo.pabrennan.com.key /etc/ssl/private
 #COPY nginx-selfsigned.key /etc/ssl/private
 
 #COPY index.html /var/www/html
